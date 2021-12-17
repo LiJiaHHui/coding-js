@@ -6,7 +6,7 @@
   if(postorder.length<=2)return true
   let root=postorder.pop()
   let right=0
-  // 找出分界点
+  // 找出分界点，同时此处也判断了左子树
   while(postorder[right]<root){
         right++
   }
