@@ -23,19 +23,28 @@
 //  输出：3
 // node递归，k不需要
 // 不能直接在递归中直接返回node的值，因为node是会随递归变化的，所以需要变量来存储
+// 利用中序遍历来判断
+
+
+
 var kthSmallest = function(root, k) {
-  let res=null
-  let fun=function(node){
-    if(!node) return null
-    if (node !== null && k > 0) {//中序遍历
-      fun(node.left)
-      if(--k===0) return res=node.val
-      fun(node.right)
-    }
+ let res=null
+ const fn=(node)=>{
+   if(!node)return null
+  if(k>0){
+    // 中序遍历
+    fn(node.left)
+    // 判断根节点
+    if(--k===0)  res=node.val
+    fn(node.right)
   }
- fun(root)
- return res
+
+ }
+ fn(root)
+return res
 };
+
+
 
 // 非递归。。。利用栈的特点，后进先出，和二叉搜索树的特定，左子树一定小于根节点
 var kthSmallest = function(root, k) {
@@ -53,4 +62,12 @@ var kthSmallest = function(root, k) {
   }
   return null //否则返回空节点
 };
+
+
+
+
+
+
+
+
 // @lc code=end
