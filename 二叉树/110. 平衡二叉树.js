@@ -20,6 +20,7 @@ var isBalanced = function(root) {
         let right=fn(node.right)右子树
         //两者之差
         if(Math.abs(left-right)>1)flag=false
+		//返回的是最大差值，+1因为根节点
         return Math.max(left,right)+1
     }
     fn(root)
