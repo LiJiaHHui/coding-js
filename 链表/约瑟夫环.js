@@ -1,6 +1,7 @@
 // 约瑟夫环
 // 0,1,...,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字。
 // 求出这个圆圈里剩下的最后一个数字。
+// 使用数组来解
 function LastRemaining_Solution(n, m) {
   let arr = [],ind=0;
   for (let i = 0; i < n; i++) {
